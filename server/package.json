@@ -1,0 +1,23 @@
+{
+  "name": "auth-system",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nedu/Auth-System.git"
+  },
+  "keywords": [],
+  "author": "Nedu Robert",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Nedu/Auth-System/issues"
+  },
+  "homepage": "https://github.com/Nedu/Auth-System#readme",
+  "devDependencies": {
+    "nodemon": "^1.17.4"
+  }
+}
