@@ -2,6 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const server = express();
 
+const authRoutes = require('./routes');
+const userRoutes = require('./routes/users');
 const setupMiddleware = require('./config/middleware')(server);
 
 mongoose.connect(`mongodb://localhost/auth`).then(conn => {
@@ -13,5 +15,10 @@ mongoose.connect(`mongodb://localhost/auth`).then(conn => {
 server.get('/', (req, res) => {
     res.json({ api: 'up and running!' });
 });
+server.use('/api', authRoutes);
+server.use('/api', userRoutes);
 
-server.listen(5000, () => console.log(`\n=== API running on port ${5000} ===\n`));
+const port = process.env.PORT || 5000;
+server.listen(port, () =>
+  console.log(`\n=== API running on port ${port} ===\n`),
+);
